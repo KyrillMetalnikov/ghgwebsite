@@ -6,9 +6,10 @@ import styles from '../../styles/Home.module.css'
 
 export default function Home() {
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     dispatch(getTeamsAsync())
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   let teams: Teams[] = useAppSelector(selectTeams);
 
@@ -21,10 +22,10 @@ export default function Home() {
 
         <ul className="teams">
             {teams.map((team: Teams) => (
-                <div key={team.team_id}>
+                <div key={team.TEAM_ID}>
                     <div>
-                        <span>{team.team_id} {team.team_name}</span>
-                        <span>wins = {team.team_wins} {team.team_losses}</span>
+                        <span>{team.TEAM_ID} {team.TEAM_NAME} </span>
+                        <span>wins = {team.TEAM_WINS} losses = {team.TEAM_LOSSES}</span>
                     </div>
                 </div>
             ))}

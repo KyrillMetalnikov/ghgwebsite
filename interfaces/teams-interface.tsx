@@ -1,6 +1,6 @@
 export interface Teams {
-    team_id: number;
-    team_name: string,
-    team_wins: number,
-    team_losses: number
+    TEAM_ID: number;
+    TEAM_NAME: string,
+    TEAM_WINS: number,
+    TEAM_LOSSES: number
 }
