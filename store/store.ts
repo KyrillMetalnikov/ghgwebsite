@@ -1,7 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
+import { teamsSlice } from './slices/teamsSlice';
 
 export const store = configureStore({
     reducer: {
+        teams: teamsSlice.reducer,
     },
 });
 

@@ -27,6 +27,11 @@ export const teamsSlice = createSlice({
             state.teams = action.payload;
         }
     },
+    extraReducers: (builder) => {
+        builder.addCase(getTeamsAsync.fulfilled, (state, action) => {
+            state.teams = action.payload;
+        })
+    }
 })
 
 export const { update } = teamsSlice.actions;
