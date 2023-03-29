@@ -1,14 +1,12 @@
-import Link from "next/link";
+import Link from "next/dist/client/link";
 
-export default function Navbar() {
+export default function HomeNavBar() {
     return(
-        <>
-            <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/schedule">Schedule</Link></li>
-                <li><Link href="/roster">Roster</Link></li>
-                <li><Link href="/standings">Standings</Link></li>
-            </ul>
-        </>
+        <div className="navbar">
+            <Link href="/" className="navbar-brand">Home</Link>
+            <Link href="/standings" className="nav-item">Standings</Link>
+            <Link href="/roster" className="nav-item">Roster</Link>
+            <Link href="/schedule" className="nav-item">Schedule</Link>
+        </div>
     )
 }
